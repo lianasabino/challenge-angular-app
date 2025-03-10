@@ -1,8 +1,8 @@
 export interface Cliente {
   id: string;
   nome: string;
-  dataNascimento: string;
-  endereco: string;
+  dataNascimento: Date;
+  endereco: Endereco;
 }
 
 export interface Endereco {
