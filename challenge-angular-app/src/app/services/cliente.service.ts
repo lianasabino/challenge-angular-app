@@ -38,4 +38,34 @@ export class ClienteService {
       },
     ]);
   }
+
+  getClientes() {
+    return this.clientes;
+  }
+
+  getClientesById(id: string): Cliente | undefined {
+    return this.clientes().find((cliente) => cliente.id === id);
+  }
+
+  addCliente(cliente: Omit<Cliente, 'id'>): Cliente {
+    const novoCliente: Cliente = {
+      ...cliente,
+      id: crypto.randomUUID(),
+    };
+
+    this.clientes.update((clientes) => [...clientes, novoCliente]);
+    return novoCliente;
+  }
+
+  updateCliente(id: string, cliente: Cliente): void {
+    this.clientes.update((clientes) =>
+      clientes.map((clientes) => (clientes.id === id ? cliente : clientes))
+    );
+  }
+
+  deleteCliente(id: string): void {
+    this.clientes.update((clientes) =>
+      clientes.filter((cliente) => cliente.id !== id)
+    );
+  }
 }
