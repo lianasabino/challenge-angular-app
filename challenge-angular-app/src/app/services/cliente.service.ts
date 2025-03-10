@@ -1,6 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { Cliente } from '../interfaces/cliente.interface';
 import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, of, throwError } from 'rxjs';
+import { CepResponse } from '../interfaces/cep.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -66,6 +68,18 @@ export class ClienteService {
   deleteCliente(id: string): void {
     this.clientes.update((clientes) =>
       clientes.filter((cliente) => cliente.id !== id)
+    );
+  }
+
+  consultarCep(cep: string): Observable<CepResponse> {
+    const newCep = cep.replace(/\D/g, '');
+
+    const url = `https://viacep.com.br/ws/${newCep}/json/`;
+
+    return this.http.get<CepResponse>(url).pipe(
+      catchError(() => {
+        return throwError(() => new Error('CEP não encontrado'));
+      })
     );
   }
 }
