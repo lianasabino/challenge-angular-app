@@ -38,11 +38,11 @@ import { RouterLink } from '@angular/router';
         </mat-card-content>
 
         <mat-card-actions>
-          <button color="primary" routerLink="/clientes" mat-raised-button>
+          <button mat-raised-button color="primary" routerLink="/clientes">
             Ir para clientes
           </button>
 
-          <button color="accent" routerLink="/produtos" mat-raised-button>
+          <button mat-raised-button color="accent" routerLink="/produtos">
             Ir para produtos
           </button>
         </mat-card-actions>

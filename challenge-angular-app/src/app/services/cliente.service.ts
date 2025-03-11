@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Cliente } from '../interfaces/cliente.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { CepResponse } from '../interfaces/cep.interface';
 
 @Injectable({
@@ -41,8 +41,8 @@ export class ClienteService {
     ]);
   }
 
-  getClientes() {
-    return this.clientes;
+  getClientes(): Cliente[] {
+    return this.clientes();
   }
 
   getClientesById(id: string): Cliente | undefined {

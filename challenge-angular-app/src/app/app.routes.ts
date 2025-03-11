@@ -6,4 +6,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
+  {
+    path: 'clientes',
+    loadComponent: () =>
+      import('./pages/clientes/cliente-list/cliente-list.component').then(
+        (m) => m.ClienteListComponent
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
