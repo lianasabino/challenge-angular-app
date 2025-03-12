@@ -9,5 +9,5 @@ export interface CepResponse {
   gia: string;
   ddd: string;
   siafi: string;
-  erro?: boolean;
+  erro?: string;
 }

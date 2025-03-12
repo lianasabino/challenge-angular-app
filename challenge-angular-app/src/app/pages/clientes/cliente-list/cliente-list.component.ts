@@ -41,7 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
           <ng-container matColumnDef="dataNascimento">
             <th mat-header-cell *matHeaderCellDef>Data de Nascimento</th>
             <td mat-cell *matCellDef="let cliente">
-              {{ cliente.dataNascimento }}
+              {{ cliente.dataNascimento | date : 'dd/MM/yyyy' }}
             </td>
           </ng-container>
 

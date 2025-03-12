@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Cliente } from '../interfaces/cliente.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, of, throwError } from 'rxjs';
 import { CepResponse } from '../interfaces/cep.interface';
 
 @Injectable({
@@ -59,9 +59,11 @@ export class ClienteService {
     return novoCliente;
   }
 
-  updateCliente(id: string, cliente: Cliente): void {
+  updateCliente(cliente: Cliente): void {
     this.clientes.update((clientes) =>
-      clientes.map((clientes) => (clientes.id === id ? cliente : clientes))
+      clientes.map((clientes) =>
+        clientes.id === cliente.id ? cliente : clientes
+      )
     );
   }
 
