@@ -28,6 +28,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'produtos',
+    loadComponent: () =>
+      import('./pages/produtos/produto-list/produto-list.component').then(
+        (m) => m.ProdutoListComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
