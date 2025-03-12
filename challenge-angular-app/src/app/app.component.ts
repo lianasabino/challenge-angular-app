@@ -48,9 +48,7 @@ import { MatListModule } from '@angular/material/list';
         </mat-sidenav>
 
         <mat-sidenav-content class="sidenav-content">
-          <div class="content-container">
-            <router-outlet></router-outlet>
-          </div>
+          <router-outlet></router-outlet>
         </mat-sidenav-content>
       </mat-sidenav-container>
     </div>

@@ -14,6 +14,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'clientes/novo',
+    loadComponent: () =>
+      import('./pages/clientes/cliente-form/cliente-form.component').then(
+        (m) => m.ClienteFormComponent
+      ),
+  },
+  {
+    path: 'clientes/editar/:clienteId',
+    loadComponent: () =>
+      import('./pages/clientes/cliente-form/cliente-form.component').then(
+        (m) => m.ClienteFormComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

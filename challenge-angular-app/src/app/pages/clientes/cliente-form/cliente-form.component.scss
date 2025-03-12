@@ -1,0 +1,61 @@
+.cliente-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.card {
+  width: 100%;
+}
+
+.personal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.street-number {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.city-state {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.street {
+  flex: 3;
+}
+
+.number {
+  flex: 1;
+}
+
+.city {
+  flex: 3;
+}
+
+.state {
+  flex: 1;
+}
