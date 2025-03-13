@@ -1,0 +1,29 @@
+.produto-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.card {
+  width: 100%;
+}
+
+.produto-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.save-button {
+  width: fit-content;
+}

@@ -35,6 +35,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'produtos/novo',
+    loadComponent: () =>
+      import('./pages/produtos/produto-form/produto-form.component').then(
+        (m) => m.ProdutoFormComponent
+      ),
+  },
+  {
+    path: 'produtos/editar/:produtoId',
+    loadComponent: () =>
+      import('./pages/produtos/produto-form/produto-form.component').then(
+        (m) => m.ProdutoFormComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
