@@ -24,6 +24,8 @@
   flex-direction: column;
 }
 
-.save-button {
-  width: fit-content;
+.form-action {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
 }

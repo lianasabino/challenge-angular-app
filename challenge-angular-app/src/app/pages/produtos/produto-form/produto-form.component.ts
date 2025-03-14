@@ -53,25 +53,36 @@ import { ProdutoService } from '../../../services/produto.service';
 
               <mat-form-field appearance="outline">
                 <mat-label>Valor</mat-label>
-                <input formControlName="valor" matInput placeholder="48.00" />
+                <input
+                  type="number"
+                  formControlName="valor"
+                  matInput
+                  placeholder="48.00"
+                />
               </mat-form-field>
 
               <mat-form-field appearance="outline">
                 <mat-label>Quantidade</mat-label>
                 <input
+                  type="number"
                   formControlName="quantidade"
                   matInput
-                  placeholder="1, 2, 3..."
+                  placeholder="10"
                 />
+                <mat-hint align="start"
+                  >Aceita apenas números inteiros!</mat-hint
+                >
               </mat-form-field>
-              <button
-                class="save-button"
-                [disabled]="produtoForm.invalid"
-                mat-raised-button
-                type="submit"
-              >
-                {{ isEditMode ? 'Editar' : 'Salvar' }}
-              </button>
+              <div class="form-action">
+                <button
+                  class="save-button"
+                  [disabled]="produtoForm.invalid"
+                  mat-raised-button
+                  type="submit"
+                >
+                  {{ isEditMode ? 'Editar' : 'Salvar' }}
+                </button>
+              </div>
             </div>
           </form>
         </mat-card-content>
@@ -108,7 +119,7 @@ export class ProdutoFormComponent implements OnInit {
     this.produtoForm = this.fb.group({
       nome: ['', Validators.required],
       valor: ['', Validators.required],
-      quantidade: ['', Validators.required],
+      quantidade: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
     });
   }
 

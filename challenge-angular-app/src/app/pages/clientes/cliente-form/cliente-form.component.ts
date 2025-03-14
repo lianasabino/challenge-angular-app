@@ -75,6 +75,7 @@ import { Cliente } from '../../../interfaces/cliente.interface';
                   placeholder="00000-000"
                   (blur)="getCep()"
                 />
+
                 <button
                   class="search-icon"
                   mat-icon-button
@@ -131,14 +132,16 @@ import { Cliente } from '../../../interfaces/cliente.interface';
                 </mat-form-field>
               </div>
             </div>
-            <button
-              class="save-button"
-              [disabled]="clienteForm.invalid"
-              mat-raised-button
-              type="submit"
-            >
-              {{ isEditMode ? 'Editar' : 'Salvar' }}
-            </button>
+            <div class="form-action">
+              <button
+                class="save-button"
+                [disabled]="clienteForm.invalid"
+                mat-raised-button
+                type="submit"
+              >
+                {{ isEditMode ? 'Editar' : 'Salvar' }}
+              </button>
+            </div>
           </form>
         </mat-card-content>
       </mat-card>
